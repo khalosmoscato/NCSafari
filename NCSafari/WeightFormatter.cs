@@ -8,10 +8,42 @@ namespace NCSafari
 {
     internal class WeightFormatter : IFormattable
     {
-        //string animalData = (Animal)Animal.Weight
-        public string ToString(string? animal, IFormatProvider? formatProvider)
+        private readonly Animal _animal;
+        public WeightFormatter(Animal animal)
         {
-            throw new NotImplementedException();
+            _animal = animal;
+        }
+
+        public string ToString(string? format, IFormatProvider? formatProvider) // format = thr string that tell you what to do / formatProvider is en-GB or es-ES
+        {
+            if (string.IsNullOrEmpty(format))
+            {
+                format = "kg";
+            }
+
+            double convertedWeight = 0;
+            string unit = "";
+
+            switch(format.ToLower())
+            {
+                case "kg":
+                    //
+                    convertedWeight = _animal.WeightInKg;
+                    unit = "kilograms";
+                    break;
+                case "oz":
+                    //
+                    convertedWeight = _animal.WeightInKg * 35.274;
+                    unit = "ounces";
+                    break;
+                default:
+                    //
+                    convertedWeight = _animal.WeightInKg;
+                    unit = "kilograms";
+                    break;
+            }
+
+            return $"This {_animal.GetType().Name}'s weight is {convertedWeight.ToString("N", formatProvider)} {unit}.";
         }
     }
 }

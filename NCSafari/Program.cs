@@ -1,21 +1,39 @@
-﻿namespace NCSafari
+﻿using System.Globalization;
+
+namespace NCSafari
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            List<Animal> animalsToSee = new List<Animal>
-            {
-                new Tiger(70),
-                new Goose(5.2f),
-                new Bat(0.9f),
-                new Goose(4),
-                new Tiger(90),
-                new Penguin(15.8f)
-            };
-            animalsToSee.Sort(new CompareWeight(true));
+            //List<Animal> animalsToSee = new List<Animal>
+            //{
+            //    new Tiger(70),
+            //    new Goose(5.2f),
+            //    new Bat(0.9f),
+            //    new Goose(4),
+            //    new Tiger(90),
+            //    new Penguin(15.8f)
+            //};
+            //animalsToSee.Sort(new CompareWeight(true));
 
-            animalsToSee.ForEach(animal => Console.WriteLine($" {animal.GetType().Name} - {animal.WeightInKg}kg"));
+            //animalsToSee.ForEach(animal => Console.WriteLine($" {animal.GetType().Name} - {animal.WeightInKg}kg"));
+
+            Tiger pumpkin = new Tiger(100.4f);
+            WeightFormatter pumpkinWeightFormatter = new WeightFormatter(pumpkin);
+
+            CultureInfo uk = new CultureInfo("en-GB");
+            CultureInfo es = new CultureInfo("es-ES");
+            CultureInfo de = new CultureInfo("de-De");
+            // with kg
+            Console.WriteLine(pumpkinWeightFormatter.ToString("kg", uk));
+            Console.WriteLine(pumpkinWeightFormatter.ToString("kg", es));
+            Console.WriteLine(pumpkinWeightFormatter.ToString("kg", de));
+            // with oz
+            Console.WriteLine(pumpkinWeightFormatter.ToString("oz", uk));
+            Console.WriteLine(pumpkinWeightFormatter.ToString("oz", es));
+            Console.WriteLine(pumpkinWeightFormatter.ToString("oz", de));
+            //consider how you will pass the culture and measurements 
 
             //Tiger fluffy = new Tiger(80);
             //Penguin penny = new Penguin(20.4f);
