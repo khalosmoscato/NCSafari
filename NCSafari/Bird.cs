@@ -4,7 +4,10 @@ using System.Text;
 
 namespace NCSafari
 {
-    internal class Bird : Animal
+    internal abstract class Bird : Animal
     {
+        protected Bird(float weightInKg) : base(weightInKg)
+        {
+        }
     }
 }
