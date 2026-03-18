@@ -6,5 +6,6 @@ namespace NCSafari
 {
     internal interface IFly
     {
+        void Fly();
     }
 }
