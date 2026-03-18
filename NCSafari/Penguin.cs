@@ -12,7 +12,7 @@ namespace NCSafari
 
         public override void MakeSound()
         {
-            Console.WriteLine(this.GetType().Name + " noot noot!");
+            Console.WriteLine(this.GetType().Name + " squacks!");
         }
 
         public void Move()
