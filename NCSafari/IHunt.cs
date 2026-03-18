@@ -4,7 +4,8 @@ using System.Text;
 
 namespace NCSafari
 {
-    internal class IHunt
+    internal interface IHunt
     {
+        void Hunt();
     }
 }

@@ -7,8 +7,9 @@
             Tiger fluffy = new Tiger(70.5f);
             Penguin penny = new Penguin(21);
 
-            fluffy.Move();
-            penny.Move();
+            fluffy.Hunt();
+            penny.Hunt();
+            penny.Swim();
 
             fluffy.MakeSound();
             penny.MakeSound();

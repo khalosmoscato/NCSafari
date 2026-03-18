@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NCSafari
 {
-    internal class Penguin : Bird, IMove
+    internal class Penguin : Bird, IHunt, ISwim
     {
         public Penguin(float weightInKg) : base(weightInKg)
         {
@@ -15,9 +15,14 @@ namespace NCSafari
             Console.WriteLine(this.GetType().Name + " squacks!");
         }
 
-        public void Move()
+        public void Hunt()
         {
-            Console.WriteLine(this.GetType().Name + " is moving!");
+            Console.WriteLine(this.GetType().Name + " is hunting in the water!");
+        }
+        
+        public void Swim()
+        {
+            Console.WriteLine(this.GetType().Name + " is swimming!");
         }
     }
 }
