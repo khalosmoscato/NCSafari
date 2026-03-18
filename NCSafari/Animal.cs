@@ -12,7 +12,7 @@ namespace NCSafari
            this.WeightInKg = weightInKg;
         }
 
-        public abstract string MakeSound(string soundName)  ;
+        public abstract void MakeSound();
 
     }
 }
