@@ -21,15 +21,15 @@ namespace NCSafari
 
             Tiger pumpkin = new Tiger(100.4f);
             WeightFormatter pumpkinWeightFormatter = new WeightFormatter(pumpkin);
-
+            // here I declare the CultureInfo, this will be the `formatProvider` arg for `ToString` method of `WeightFormatter`
             CultureInfo uk = new CultureInfo("en-GB");
             CultureInfo es = new CultureInfo("es-ES");
             CultureInfo de = new CultureInfo("de-De");
-            // with kg
+            // with kg, note there is a difference with the use of dots or commas
             Console.WriteLine(pumpkinWeightFormatter.ToString("kg", uk));
             Console.WriteLine(pumpkinWeightFormatter.ToString("kg", es));
             Console.WriteLine(pumpkinWeightFormatter.ToString("kg", de));
-            // with oz
+            // with oz, note the differences
             Console.WriteLine(pumpkinWeightFormatter.ToString("oz", uk));
             Console.WriteLine(pumpkinWeightFormatter.ToString("oz", es));
             Console.WriteLine(pumpkinWeightFormatter.ToString("oz", de));
